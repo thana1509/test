@@ -1,5 +1,5 @@
 const multer = require("multer");
-// const storage_image = require('../config/storage_image')
+
 
 const storage = multer.diskStorage({ // config ของ Multer ว่าจะให้เก็บไฟล์ไว้ที่ไหน และ Rename ชื่อไฟล์
     destination: function (req, file, cb) {

@@ -1,14 +1,11 @@
 const db = require("../../config/database");
-//192.168.1.104
-//192.168.1.101
 
-const listMaintenance = (req, res, next) => {
-
+const getShow = (req, res, next) => {
     db.getConnection(function (err, connection) {
         if (err) {
             res.status(500).json({"status": "Error", "message": "Connection DB Error"})
         } else {
-            connection.query(`SELECT maintenanceID, maintenanceDetail, location, CONCAT('http://localhost:3000/',image) AS image,  status, createDtm FROM maintenance WHERE userID = '001' `, function (error, result) {
+            connection.query(`SELECT date, time, showName, totalAudience FROM show`, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})
@@ -20,11 +17,6 @@ const listMaintenance = (req, res, next) => {
     })
 }
 
-module.exports = {listMaintenance}
+module.exports = {getShow}
 
-// {
-//     "date": "",
-//     "time": "",
-//     "showName": "",
-//     "visitors": ,
-// },
+//moment timezone  asia/bangkok
