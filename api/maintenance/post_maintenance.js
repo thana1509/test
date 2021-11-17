@@ -16,7 +16,6 @@ const postMaintenance = (req, res, next) => {
                 connection.query(`INSERT INTO maintenance(maintenanceDetail,location,image)
      VALUES('${maintenanceDetail}', '${location}', '${image}')`, function (error, result) {
                     connection.release()
-
                     if (error) {
                         res.status(500).json({"status": "Error", "message": `${error.message}`})
                     } else {

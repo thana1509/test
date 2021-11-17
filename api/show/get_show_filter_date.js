@@ -6,7 +6,7 @@ const getShowFilterDate = (req, res, next) => {
         if (err) {
             res.status(500).json({"status": "Error", "message": "Connection DB Error"})
         } else {
-            connection.query(`SELECT date, time, showName, totalAudience FROM show WHERE show = ${'date'}`, function (error, result) {
+            connection.query(`SELECT date, time, showName, totalAudience FROM shows WHERE date = '${date}'`, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})

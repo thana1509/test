@@ -19,7 +19,7 @@ const deleteMaintenance = (req, res, next) => {
                             resultCode: "200",
                             status: "SUCCESS",
                             "errorMessage": null,
-                            message: `Complete Deleted maintenanceID = ${ref} `
+                            message: `Complete Deleted maintenanceID = ${ref}`
                         })
                     }
                 })

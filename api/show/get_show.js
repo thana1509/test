@@ -5,7 +5,7 @@ const getShow = (req, res, next) => {
         if (err) {
             res.status(500).json({"status": "Error", "message": "Connection DB Error"})
         } else {
-            connection.query(`SELECT date, time, showName, totalAudience FROM show`, function (error, result) {
+            connection.query(`SELECT date, time, showName, totalAudience FROM shows`, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})
