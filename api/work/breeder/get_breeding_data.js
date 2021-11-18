@@ -1,12 +1,12 @@
-const db = require("../../config/database");
+const db = require("../../../config/database");
 
-const getShowFilterDate = (req, res, next) => {
-    const date = req.query.date
+const getBreedingData = (req, res, next) => {
+
     db.getConnection(function (err, connection) {
         if (err) {
             res.status(500).json({"status": "Error", "message": "Connection DB Error"})
-        } else {
-            connection.query(`SELECT date, time, showName, totalAudience FROM shows WHERE date = '${date}'`, function (error, result) {
+        } else {//TODO edit query
+            connection.query(`SELECT maintenanceID, maintenanceDetail, location, CONCAT('http://localhost:3000/',image) AS image,  status, createDtm FROM maintenance WHERE userID = '001' `, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})
@@ -18,6 +18,4 @@ const getShowFilterDate = (req, res, next) => {
     })
 }
 
-module.exports = {getShowFilterDate}
-
-
+module.exports = {getBreedingData}

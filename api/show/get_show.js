@@ -1,5 +1,4 @@
 const db = require("../../config/database");
-
 const getShow = (req, res, next) => {
     db.getConnection(function (err, connection) {
         if (err) {
