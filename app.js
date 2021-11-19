@@ -21,6 +21,9 @@ const getBreedingData = require('./api/work/breeder/get_breeding_data')
 const getMedicalHistory = require('./api/work/veterinary/get_medical_history')
 const getVaccineHistory = require('./api/work/veterinary/get_vaccine_history')
 const getSchedule = require('./api/work/schedule/get_schedule')
+const getWeather = require('./api/weather/get_weather')
+const getNewsSlider = require('./api/news/get_news_slider')
+const getNewsScroll =require('./api/news/get_news_scroll')
 
 
 app.post('/api/postMaintenance', upload.single('image'), postMaintenance.postMaintenance);
@@ -32,11 +35,16 @@ app.get('/api/getShowFilterDate', getShowFilterDate.getShowFilterDate);
 // app.get('/api/getVisitor',getVisitor.getVisitor);
 app.get('/api/getAnimalInZoo', getAnimalInZoo.getAnimalInZoo);
 app.get('/api/getAnimalInZooFilterId', getAnimalInZooFilterId.getAnimalInZooFilterId);
-app.get('./api/getResearchData', getResearchData.getResearchData);
-app.get('./api/getBreedingData', getBreedingData.getBreedingData);
-app.get('./api/getMedicalHistory', getMedicalHistory.getMedicalHistory);
-app.get('./api/getVaccineHistory', getVaccineHistory.getVaccineHistory);
-app.post('./api/getSchedule', getSchedule.getSchedule);
+app.get('/api/getResearchData', getResearchData.getResearchData);
+app.get('/api/getBreedingData', getBreedingData.getBreedingData);
+app.get('/api/getMedicalHistory', getMedicalHistory.getMedicalHistory);
+app.get('/api/getVaccineHistory', getVaccineHistory.getVaccineHistory);
+app.post('/api/getSchedule', getSchedule.getSchedule);
+app.get('/api/getWeather', getWeather.getWeather);
+app.get('/api/getNewsSlider', getNewsSlider.getNewsSlider);
+app.get('/api/getNewsScroll', getNewsScroll.getNewsScroll);
+
+
 
 
 app.listen(3000, () => {
