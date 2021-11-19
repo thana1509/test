@@ -20,6 +20,7 @@ const getResearchData = require('./api/work/Researcher/get_research_data')
 const getBreedingData = require('./api/work/breeder/get_breeding_data')
 const getMedicalHistory = require('./api/work/veterinary/get_medical_history')
 const getVaccineHistory = require('./api/work/veterinary/get_vaccine_history')
+const getSchedule = require('./api/work/schedule/get_schedule')
 
 
 app.post('/api/postMaintenance', upload.single('image'), postMaintenance.postMaintenance);
@@ -35,6 +36,7 @@ app.get('./api/getResearchData', getResearchData.getResearchData);
 app.get('./api/getBreedingData', getBreedingData.getBreedingData);
 app.get('./api/getMedicalHistory', getMedicalHistory.getMedicalHistory);
 app.get('./api/getVaccineHistory', getVaccineHistory.getVaccineHistory);
+app.post('./api/getSchedule', getSchedule.getSchedule);
 
 
 app.listen(3000, () => {
