@@ -23,7 +23,8 @@ const getVaccineHistory = require('./api/work/veterinary/get_vaccine_history')
 const getSchedule = require('./api/work/schedule/get_schedule')
 const getWeather = require('./api/weather/get_weather')
 const getNewsSlider = require('./api/news/get_news_slider')
-const getNewsScroll =require('./api/news/get_news_scroll')
+const getNewsScroll = require('./api/news/get_news_scroll')
+const getCalendar = require('./api/calendar/get_calendar')
 
 
 app.post('/api/postMaintenance', upload.single('image'), postMaintenance.postMaintenance);
@@ -43,6 +44,7 @@ app.post('/api/getSchedule', getSchedule.getSchedule);
 app.get('/api/getWeather', getWeather.getWeather);
 app.get('/api/getNewsSlider', getNewsSlider.getNewsSlider);
 app.get('/api/getNewsScroll', getNewsScroll.getNewsScroll);
+app.get('/api/getCalendar', getCalendar.getCalendar);
 
 
 
