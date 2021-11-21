@@ -25,6 +25,8 @@ const getWeather = require('./api/weather/get_weather')
 const getNewsSlider = require('./api/news/get_news_slider')
 const getNewsScroll = require('./api/news/get_news_scroll')
 const getCalendar = require('./api/calendar/get_calendar')
+const getDocument = require('./api/document/get_document')
+
 
 
 app.post('/api/postMaintenance', upload.single('image'), postMaintenance.postMaintenance);
@@ -45,7 +47,7 @@ app.get('/api/getWeather', getWeather.getWeather);
 app.get('/api/getNewsSlider', getNewsSlider.getNewsSlider);
 app.get('/api/getNewsScroll', getNewsScroll.getNewsScroll);
 app.get('/api/getCalendar', getCalendar.getCalendar);
-
+app.get('./api/getDocument', getDocument.getDocument);
 
 
 
