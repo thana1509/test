@@ -1,6 +1,7 @@
 const db = require("../../../config/database");
 
 const getBreedingData = (req, res, next) => {
+    const userID = req.query.userID
 
     db.getConnection(function (err, connection) {
         if (err) {
