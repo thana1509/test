@@ -21,10 +21,3 @@ const listMaintenance = (req, res, next) => {
 }
 
 module.exports = {listMaintenance}
-
-// {
-//     "date": "",
-//     "time": "",
-//     "showName": "",
-//     "visitors": ,
-// },
