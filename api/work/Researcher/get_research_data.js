@@ -7,7 +7,7 @@ const getResearchData = (req, res, next) => {
         if (err) {
             res.status(500).json({"status": "Error", "message": "Connection DB Error"})
         } else {//TODO edit query แก้แล้วแต่ไม่รู้ถูกป่าว
-            connection.query(`SELECT researchID, researchName, typeName, researchDetail, date FROM research inner join animaltype on research.typeID = animaltype.typeID`, function (error, result) {
+            connection.query(`SELECT researchID, researchName, typeName, researchDetail, date FROM research INNER JOIN animaltype on research.typeID = animaltype.typeID`, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})
