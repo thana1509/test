@@ -40,8 +40,8 @@ app.get('/api/getAnimalInZoo', getAnimalInZoo.getAnimalInZoo);
 app.get('/api/getAnimalInZooFilterId', getAnimalInZooFilterId.getAnimalInZooFilterId);
 app.get('/api/getResearchData', getResearchData.getResearchData);
 app.get('/api/getBreedingData', getBreedingData.getBreedingData);
-app.get('/api/getMedicalHistory', getMedicalHistory.getMedicalHistory);
-app.get('/api/getVaccineHistory', getVaccineHistory.getVaccineHistory);
+app.get('/api/getMedicalHistory', getMedicalHistory.getMedicalHistory); //post
+app.get('/api/getVaccineHistory', getVaccineHistory.getVaccineHistory); //post
 app.post('/api/getSchedule', getSchedule.getSchedule);
 app.get('/api/getWeather', getWeather.getWeather);
 app.get('/api/getNewsSlider', getNewsSlider.getNewsSlider);
