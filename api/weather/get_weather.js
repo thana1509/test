@@ -6,7 +6,7 @@ const getWeather = (req, res, next) => {
         if (err) {
             res.status(500).json({"status": "Error", "message": "Connection DB Error"})
         } else {
-            connection.query(`SELECT date, time, showName, totalAudience FROM shows WHERE date = '${date}'`, function (error, result) {
+            connection.query(`SELECT temperature, airpressure, moisture FROM weather WHERE date = '${CURDATE()}'`, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})
