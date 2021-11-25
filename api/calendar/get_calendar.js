@@ -6,7 +6,7 @@ const getCalendar = (req, res, next) => {
         if (err) {
             res.status(500).json({"status": "Error", "message": "Connection DB Error"})
         } else {
-            connection.query(`SELECT calendarName, date FROM calendar WHERE userId = '${userId}'`, function (error, result) {
+            connection.query(`SELECT calendarName, date, time, location FROM calendar WHERE userId = '${userId}'`, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})
