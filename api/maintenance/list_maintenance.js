@@ -3,6 +3,7 @@ const db = require("../../config/database");
 //192.168.1.101
 
 const listMaintenance = (req, res, next) => {
+    const userID = req.query.userID
 
     db.getConnection(function (err, connection) {
         if (err) {
@@ -21,3 +22,5 @@ const listMaintenance = (req, res, next) => {
 }
 
 module.exports = {listMaintenance}
+
+//maintenance ทำไมถึงเชื่อมกับ calendar อ่ะ

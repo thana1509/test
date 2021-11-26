@@ -6,7 +6,7 @@ const getNewsSlider = (req, res, next) => {
         if (err) {
             res.status(500).json({"status": "Error", "message": "Connection DB Error"})
         } else {
-            connection.query(`SELECT date, time, showName, totalAudience FROM shows WHERE date = '${date}'`, function (error, result) {
+            connection.query(`SELECT title, detail, image, date FROM shows WHERE DATE(date) = CURDATE() AND isHighlight = true`, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})
@@ -21,3 +21,15 @@ const getNewsSlider = (req, res, next) => {
 module.exports = {getNewsSlider}
 
 
+// {
+//     "resultCode": "200",
+//     "status": "SUCCESS",
+//     "errorMessage": null,
+//     "data": {
+//     "title": "",
+//         "detail": "",
+//         "image": "",
+//         "date": "",
+//         "time": "",
+// }
+// }
