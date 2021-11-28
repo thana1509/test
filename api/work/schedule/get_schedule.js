@@ -10,7 +10,7 @@ const getSchedule = (req, res, next) => {
         } else {//TODO edit query
             connection.query(`SELECT time, scheduleName, status FROM schedule 
                               INNER JOIN calendar on schedule.calendarID = calendar.calendarID  
-                              INNER JOIN user on user.userID = calendar.userID WHERE userID = '${userID}' `, function (error, result) {
+                              INNER JOIN user on user.userID = calendar.userID WHERE userID = '${userID}' AND DATE(date) = CURDATE() `, function (error, result) {
                 connection.release()
                 if (error) {
                     res.status(500).json({"status": "Error", "message": `${error.message}`})
